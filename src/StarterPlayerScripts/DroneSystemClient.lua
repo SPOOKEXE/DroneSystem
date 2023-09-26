@@ -146,7 +146,8 @@ function Module:OpenDroneController( DroneInstance )
 		if ForwardMultiply == 0 then
 			ACTIVE_HORIZONTAL_SPEED *= 0.99
 		end
-
+		ACTIVE_HORIZONTAL_SPEED = math.min( ACTIVE_HORIZONTAL_SPEED, MAXIMUM_HORIZONTAL_SPEED ) * math.sign( ACTIVE_HORIZONTAL_SPEED )
+ 
 		--[[
 			local DestinationPosition = DroneInstance.Span.Position
 
